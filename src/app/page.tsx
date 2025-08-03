@@ -1,12 +1,10 @@
-import { auth } from '@clerk/nextjs/server';
+// src/app/page.tsx
+
 import { redirect } from 'next/navigation';
 
-export default async function Page() {
-  const { userId } = await auth();
-
-  if (!userId) {
-    return redirect('/auth/sign-in');
-  } else {
-    redirect('/dashboard/overview');
-  }
+/**
+ * The root page now simply redirects to the main dashboard overview.
+ */
+export default function RootPage() {
+  redirect('/dashboard/overview');
 }
